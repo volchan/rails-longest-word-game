@@ -1,13 +1,25 @@
-<h2>Here is your grid !</h2>
-
-<% @grid.each do |letter|%>
-  <%= letter %>
-<% end %>
-
-<form action="/score" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="start_time" value="<%= @start_time %>">
-  <input type="hidden" name="grid" value="<%= @grid.join %>">
-  <input type="text" name="attempt" placeholder="What is your answer">
-  <input type="submit" value="GO !">
-</form>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3 text-center">
+        <h2>Here is your grid !</h2>
+      </div>
+    </div>
+    <row>
+      <div class="col-xs-6 col-xs-offset-3">
+        <% @grid.each do |letter|%>
+        <%= letter %>
+        <% end %>
+        <br>
+        <form action="/score" method="post" class="form-group">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input type="hidden" name="start_time" value="<%= @start_time %>">
+          <input type="hidden" name="grid" value="<%= @grid.join %>">
+          <input type="text" name="attempt" class="form-control" placeholder="What is your answer">
+          <br>
+          <input type="submit" class="btn btn-primary" value="GO !">
+        </form>
+      </div>
+    </row>
+  </div>
+</div>

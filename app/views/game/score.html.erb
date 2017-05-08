@@ -1,7 +1,14 @@
-<h2><%= @result[:message] %></h2>
-<p>Your answer : <%= params[:attempt] %></p>
-<p>Time taken to answer : <%= @result[:time].round(3) %> seconds</p>
-<p>Translation : <%= @result[:translation] %></p>
-<p>Your score : <%= @result[:score] %></p>
-
-<%= link_to 'Retry', root_path %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3 text-left">
+        <h2><%= @result[:message] %></h2>
+            <p>Your answer : <%= params[:attempt] %></p>
+            <p>Time taken to answer : <%= @result[:time].round(3) %> seconds</p>
+            <p>Translation : <%= @result[:translation] %></p>
+            <p>Your score : <%= @result[:score] %></p>
+        <%= link_to 'Retry', root_path, class:"btn btn-lg btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

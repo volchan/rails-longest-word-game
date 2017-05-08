@@ -23,7 +23,7 @@ class GameController < ApplicationController
   end
 
   def run_game(attempt, grid, start_time, end_time)
-    result = { time: end_time - Time.parse(start_time) }
+    result = { time: (end_time - Time.parse(start_time)).round(2) }
 
     result[:translation] = get_translation(attempt)
     result[:score], result[:message] = score_and_message(
